@@ -2,6 +2,8 @@ table 50101 "CSD Seminar"
 //CSD1.00 - 2018-10-08 - D. E. Veloper
 {
     Caption = 'Seminar';
+    DrillDownPageId = 50102;
+    LookupPageId = 50102;
 
     fields
     {
