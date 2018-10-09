@@ -87,4 +87,48 @@ page 50121 "CSD Seminar Ledger Entries"
             }
         }
     }
+    actions
+    {
+        area(navigation)
+        {
+            group("&Seminar Registration")
+            {
+                Caption = '&Seminar Registration';
+                action("Co&mments")
+                {
+                    Caption = 'Co&mments';
+                    Image = Comment;
+                    RunObject = page "CSD Seminar Comment List";
+                    RunPageLink = "No."=Field("Document No.");
+                    RunPageView = where("Table Name"=const("Posted Seminar Registration"));
+                }
+                action("&Charges")
+                {
+                    Caption = '&Charges';
+                    Image = Costs;
+                    RunObject = Page  "CSD Posted Seminar Charges";
+                    RunPageLink = "Document No."=Field("Document No.");
+                }
+            }
+        }
+
+        area(Processing)
+        {
+            action("&Navigate")
+            {
+                Caption = '&Navigate';
+                Image = Navigate;
+                Promoted = true;
+                PromotedCategory = Process;
+                
+                trigger OnAction()
+                var
+                    Navigate : Page Navigate;
+                begin
+                    Navigate.SetDoc("Posting Date","Document No.");
+                    Navigate.Run;
+                end;
+            }
+        }
+    }
 }
