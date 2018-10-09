@@ -5,7 +5,7 @@ page 50140 "CSD Seminar Manager Activities"
 //      - Created new page
 
 {
-    PageType = Card;
+    PageType = CardPart;
     SourceTable = "CSD Seminar Cue";
     Caption = 'Seminar Manager Activities';
     Editable = false;
