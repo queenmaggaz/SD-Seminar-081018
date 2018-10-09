@@ -4,78 +4,79 @@ report 50101 SeminarRegParticipantList
     ApplicationArea = All;
     Caption = 'Seminar Reg.- Participant List';
     DefaultLayout = RDLC;
-    
+    RDLCLayout = './Layouts/SeminarRegParticipantlist.rdl';
+
     dataset
     {
-        dataitem("CSD Seminar Reg. Header";"CSD Seminar Reg. Header")
+        dataitem("CSD Seminar Reg. Header"; "CSD Seminar Reg. Header")
         {
-            DataItemTableView = sorting("No.");
+            DataItemTableView = sorting ("No.");
             RequestFilterFields = "No.", "Seminar No.";
 
-            column(No_;"No.")
+            column(No_; "No.")
             {
                 IncludeCaption = true;
             }
 
-            column(Seminar_No_;"Seminar No.")
+            column(Seminar_No_; "Seminar No.")
             {
                 IncludeCaption = true;
             }
 
-            column(Seminar_Name;"Seminar Name")
+            column(Seminar_Name; "Seminar Name")
             {
                 IncludeCaption = true;
             }
 
-            column(Starting_Date;"Starting Date")
+            column(Starting_Date; "Starting Date")
             {
                 IncludeCaption = true;
             }
 
-            column(Duration;Duration)
+            column(Duration; Duration)
             {
                 IncludeCaption = true;
             }
 
-            column(Instructor_Name;"Instructor Name")
+            column(Instructor_Name; "Instructor Name")
             {
                 IncludeCaption = true;
             }
 
-            column(Room_Name;"Room Name")
+            column(Room_Name; "Room Name")
             {
                 IncludeCaption = true;
             }
 
-            dataitem("CSD Seminar Registration Line";"CSD Seminar Registration Line")
+            dataitem("CSD Seminar Registration Line"; "CSD Seminar Registration Line")
             {
-                DataItemTableView = sorting("Document No.", "Line No.");
-                DataItemLink = "Document No." = field("No.");
+                DataItemTableView = sorting ("Document No.", "Line No.");
+                DataItemLink = "Document No." = field ("No.");
 
-                column(Bill_to_Customer_No_;"Bill-to Customer No.")
+                column(Bill_to_Customer_No_; "Bill-to Customer No.")
                 {
-
+                    IncludeCaption = true;
                 }
-                column(Participant_Contact_No_;"Participant Contact No.")
+                column(Participant_Contact_No_; "Participant Contact No.")
                 {
-
+                    IncludeCaption = true;
                 }
-                column(Participant_Name;"Participant Name")
+                column(Participant_Name; "Participant Name")
                 {
-
+                    IncludeCaption = true;
                 }
             }
         }
 
-        dataitem("Company Information";"Company Information")
+        dataitem("Company Information"; "Company Information")
         {
-            column(Company_Name;Name)
+            column(Company_Name; Name)
             {
-
+                IncludeCaption = true;
             }
         }
     }
-    
+
     labels
     {
         SeminarRegistrationHeaderCap = 'Seminar Registration List';
